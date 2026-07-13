@@ -37,8 +37,8 @@
   --space-3: 16px;
   --space-4: 24px;
   --space-5: 32px;
-  --space-6: 48px;
-  --space-7: 84px;
+  --space-6: 44px;
+  --space-7: 76px;
 
   --font: 'Heebo', system-ui, -apple-system, 'Segoe UI', sans-serif;
   --max-w: 1180px;
@@ -84,7 +84,7 @@ h1, h2, h3 { font-weight: 800; letter-spacing: -0.01em; line-height: 1.15; text-
 h2 { font-size: clamp(28px, 4vw, 42px); margin-top: var(--space-3); margin-bottom: var(--space-3); }
 h3 { font-size: clamp(20px, 2.5vw, 26px); }
 p { max-width: 65ch; }
-.eyebrow, .hero-sub, .lead-form-head p, .mini-cta-text, .final-cta-head p, .quote-text, .proof-stat-sub { text-wrap: balance; }
+.eyebrow, .hero-sub, .lead-form-head p, .mini-cta-text, .final-cta-head p, .proof-stat-sub, .testimonials-sub { text-wrap: balance; }
 
 /* Skip link */
 .skip-link {
@@ -121,8 +121,13 @@ p { max-width: 65ch; }
   background: var(--accent);
   color: #fff;
   box-shadow: var(--shadow-glow);
+  animation: btn-accent-pulse 2.6s ease-in-out infinite;
 }
-.btn-accent:hover { background: var(--accent-bright); transform: translateY(-2px); }
+.btn-accent:hover { background: var(--accent-bright); transform: translateY(-2px); animation: none; }
+@keyframes btn-accent-pulse {
+  0%, 100% { box-shadow: 0 8px 30px rgba(156,47,146,0.35); }
+  50% { box-shadow: 0 8px 34px rgba(156,47,146,0.6); }
+}
 .btn-ghost {
   background: transparent;
   color: var(--ink-100);
@@ -162,13 +167,26 @@ p { max-width: 65ch; }
 }
 .hero-grid {
   display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
+  grid-template-columns: 0.9fr 1.1fr;
   gap: var(--space-6);
   align-items: center;
 }
+.hero-banner {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  color: var(--accent-bright);
+  background: rgba(201,63,189,0.12);
+  border: 1px solid rgba(201,63,189,0.35);
+  border-radius: var(--radius-pill);
+  padding: 8px 16px;
+  margin-bottom: var(--space-3);
+}
+.hero-banner-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent-bright); flex-shrink: 0; }
 .hero-title {
   font-size: clamp(34px, 5.2vw, 58px);
-  margin-block: var(--space-3);
+  margin-block: 0 var(--space-3);
 }
 .hero-sub {
   font-size: clamp(17px, 2vw, 20px);
@@ -306,19 +324,6 @@ p { max-width: 65ch; }
 }
 .mini-cta-text { font-weight: 700; font-size: 18px; margin-bottom: var(--space-3); color: var(--ink-100); }
 
-/* ---------------------------------- Case study ---------------------------------- */
-.case-study { padding-block: var(--space-7); }
-.case-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: var(--space-6); align-items: center; }
-.case-copy p { color: var(--ink-300); margin-bottom: var(--space-3); }
-.case-copy blockquote {
-  font-size: 20px; font-weight: 700; font-style: normal;
-  border-inline-end: 4px solid var(--accent);
-  padding-inline-end: var(--space-3);
-  margin-block: var(--space-3);
-}
-.case-signature { color: var(--ink-500); font-size: 14px; }
-.case-media img { border-radius: var(--radius-md); box-shadow: var(--shadow-md); cursor: zoom-in; }
-
 /* ---------------------------------- Process ---------------------------------- */
 .process { padding-block: var(--space-7); background: var(--ink-900); }
 .steps { max-width: 720px; margin-inline: auto; position: relative; }
@@ -328,6 +333,29 @@ p { max-width: 65ch; }
   border-bottom: 1px solid var(--border-dark);
 }
 .step:last-child { border-bottom: none; }
+.step:not(:last-child) { position: relative; }
+.step:not(:last-child)::after {
+  content: "⌄";
+  position: absolute;
+  inset-inline-start: 8px;
+  bottom: -18px;
+  width: 24px;
+  text-align: center;
+  font-size: 20px;
+  line-height: 1;
+  color: var(--accent-bright);
+  animation: step-arrow-bounce 1.6s ease-in-out infinite;
+  z-index: 1;
+  pointer-events: none;
+}
+.step:nth-child(1)::after { animation-delay: 0s; }
+.step:nth-child(2)::after { animation-delay: 0.2s; }
+.step:nth-child(3)::after { animation-delay: 0.4s; }
+.step:nth-child(4)::after { animation-delay: 0.6s; }
+@keyframes step-arrow-bounce {
+  0%, 100% { transform: translateY(0); opacity: 0.45; }
+  50% { transform: translateY(5px); opacity: 1; }
+}
 .step-num {
   flex-shrink: 0;
   width: 40px; height: 40px;
@@ -336,27 +364,18 @@ p { max-width: 65ch; }
   color: #fff;
   display: flex; align-items: center; justify-content: center;
   font-weight: 800;
+  position: relative;
+  z-index: 2;
 }
 .step-content strong { display: block; font-size: 17px; margin-bottom: 3px; }
 .step-content span { color: var(--ink-300); font-size: 15px; }
 
 /* ---------------------------------- Testimonials ---------------------------------- */
-.testimonials { padding-block: var(--space-7); }
-.quote-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-3); margin-bottom: var(--space-6); }
-.quote-card {
-  background: var(--ink-800);
-  border: 1px solid var(--border-dark);
-  border-radius: var(--radius-md);
-  padding: var(--space-4);
-  border-inline-start: 4px solid var(--accent);
-}
-.quote-text { font-size: 16px; color: var(--ink-100); margin-bottom: var(--space-2); }
-.quote-person { font-weight: 700; font-size: 14px; }
-.quote-result { color: var(--accent-bright); font-weight: 700; font-size: 13px; }
-
-.screenshots-heading { font-size: clamp(20px,2.5vw,26px); margin-bottom: var(--space-3); }
+.testimonials { padding-block: var(--space-7); text-align: center; }
+.testimonials h2 { max-width: 28ch; margin-inline: auto; }
+.testimonials-sub { color: var(--ink-300); margin-inline: auto; margin-bottom: var(--space-5); }
 .screenshot-grid {
-  display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-3);
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-3); text-align: start;
 }
 .screenshot-item, .ba-item {
   border-radius: var(--radius-md); overflow: hidden; border: 1px solid var(--border-dark);
@@ -403,13 +422,23 @@ p { max-width: 65ch; }
 .video-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-3); text-align: start; }
 .video-card {
   position: relative;
-  z-index: 0; /* establishes its own stacking context so child z-index (e.g. the --wide scrim) can't escape it */
+  z-index: 0; /* establishes its own stacking context so child z-index (e.g. the scrim) can't escape it */
   aspect-ratio: 9/16;
   border-radius: var(--radius-md);
   overflow: hidden;
-  background: linear-gradient(155deg, var(--accent-dark), var(--ink-800) 70%);
+  background-color: var(--ink-800);
+  background-size: cover;
+  background-position: center;
   border: 1px solid var(--border-dark);
   display: flex; flex-direction: column; align-items: center; justify-content: center; gap: var(--space-2);
+}
+.video-card::before {
+  /* scrim so the play icon/label stay legible over the poster photo;
+     negative z-index keeps it behind the real <video> once playback starts */
+  content: "";
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(10,6,20,0.15) 0%, rgba(10,6,20,0.65) 100%);
+  z-index: -1;
 }
 .video-card video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 .video-play {
@@ -434,15 +463,7 @@ p { max-width: 65ch; }
 .video-card:hover .video-play { background: var(--accent); transform: scale(1.08); }
 .video-card.is-playing .video-play::before { animation: none; }
 .video-name { font-weight: 700; font-size: 14px; }
-.video-card--wide { aspect-ratio: 16/9; background-size: cover; background-position: center; width: 100%; }
-.video-card--wide::before {
-  /* scrim so the play icon/label stay legible over a light photo poster;
-     negative z-index keeps it behind the real <video> once playback starts */
-  content: "";
-  position: absolute; inset: 0;
-  background: linear-gradient(180deg, rgba(10,6,20,0.2) 0%, rgba(10,6,20,0.7) 100%);
-  z-index: -1;
-}
+.video-card--wide { aspect-ratio: 16/9; width: 100%; }
 
 /* ---------------------------------- Who am I ---------------------------------- */
 .who-am-i {
@@ -584,12 +605,9 @@ html.js .reveal.is-visible { opacity: 1; transform: translateY(0); }
 @media (max-width: 900px) {
   .hero-grid { grid-template-columns: 1fr; }
   .hero-media { order: -1; aspect-ratio: 4/3; }
-  .case-grid { grid-template-columns: 1fr; }
-  .case-media { order: -1; }
   .proof-stat-grid { grid-template-columns: 1fr; }
   .proof-stat-media { order: -1; max-width: 340px; margin-inline: auto; }
   .who-grid { grid-template-columns: 1fr; }
-  .quote-grid { grid-template-columns: 1fr; }
   .video-grid { grid-template-columns: repeat(2, 1fr); }
   .screenshot-grid { grid-template-columns: repeat(2, 1fr); }
   .carousel-track .ba-item { width: min(78vw, 280px); }
