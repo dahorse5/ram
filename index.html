@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<script>
+  // Some browsers restore the previous scroll position on reload/back-
+  // forward navigation, which reads as "the page jumps down on its own"
+  // on a long single-page site. Run before first paint so it never
+  // becomes visible, and only when there's no intentional #hash.
+  if ("scrollRestoration" in history) { history.scrollRestoration = "manual"; }
+  if (!location.hash) { window.scrollTo(0, 0); }
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>מאמן כושר אישי אונליין עם ראם | (R)EVOLUTION</title>
+<meta name="description" content="תהליך חיטוב אישי תוך 90 יום, אונליין מכל מקום בארץ. בלי דיאטת רעב ובלי לנחש מה לעשות. ליווי שבועי צמוד ומעקב אישי. קבע שיחת היכרות קצרה, בלי עלות.">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#120f16">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:locale" content="he_IL">
+<meta property="og:title" content="מאמן כושר אישי אונליין עם ראם | (R)EVOLUTION">
+<meta property="og:description" content="תהליך חיטוב אישי תוך 90 יום, בלי לאבד שריר, בלי דיאטת רעב, ובלי לנחש. ליווי שבועי צמוד מכל מקום בארץ.">
+<meta property="og:image" content="assets/optimized/og-share.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
+<!-- Favicons -->
+<link rel="icon" type="image/png" sizes="32x32" href="assets/optimized/icons/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/optimized/icons/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/optimized/icons/apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<link rel="preload" as="image" href="assets/optimized/portraits/hero-ram.webp">
+<link rel="stylesheet" href="css/style.css">
+
+<!-- Structured data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "אימון כושר אישי אונליין",
+  "name": "(R)EVOLUTION · Break Your Limits",
+  "description": "תהליך אימון וחיטוב אישי אונליין עם ראם. תוכנית תזונה ואימונים מותאמת אישית, מעקב שבועי, ליווי צמוד.",
+  "areaServed": "IL",
+  "provider": {
+    "@type": "Person",
+    "name": "ראם",
+    "sameAs": "https://instagram.com/yourcoach.reem"
+  }
+}
+</script>
+</head>
+<body>
+<a href="#main" class="skip-link">דלג לתוכן הראשי</a>
+
+<!-- ============ HEADER ============ -->
+<header class="site-header" id="top">
+  <div class="wrap header-row">
+    <p class="header-banner">מתאים לך אם אתה רוצה גוף חטוב, בזמן קצר, ובלי לנחש איך.</p>
+    <a href="#lead-form-hero" class="btn btn-accent btn-sm js-cta-scroll">קבע שיחת היכרות</a>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ============ 1+2. HERO ============ -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="hero-copy reveal">
+        <p class="eyebrow">רק לבחורים שמתאמנים כמו מטורפים, ועדיין לא רואים את התוצאה במראה.</p>
+        <h1 class="hero-title">תוך <span class="accent-text">90 יום</span> אתה עומד מול המראה בגוף שתמיד רצית</h1>
+        <p class="hero-sub">בלי לאבד שריר, בלי דיאטת רעב, ובלי עוד ניחושים. רק תוכנית שעובדת.</p>
+        <div class="hero-actions">
+          <a href="#lead-form-hero" class="btn btn-accent btn-lg js-cta-scroll">אני רוצה להתחיל את התהליך</a>
+          <a href="#process" class="btn btn-ghost js-cta-scroll">איך זה עובד?</a>
+        </div>
+        <p class="hero-trust">ליווי אישי אונליין · מעקב שבועי · מכל מקום בארץ</p>
+      </div>
+      <div class="hero-media reveal">
+        <img src="assets/optimized/portraits/hero-ram.webp" width="1170" height="1193" alt="ראם, מאמן כושר אישי, עומד בביטחון בחדר הלבשה של חדר כושר" fetchpriority="high">
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FORM #1 — right after the headline -->
+  <section class="cta-form-section" id="lead-form-hero-wrap">
+    <div class="wrap">
+      <form class="lead-form reveal" id="lead-form-hero" novalidate>
+        <div class="lead-form-head">
+          <h2>רוצה את הגוף הזה? זה הצעד הראשון</h2>
+          <p>תשאיר שם וטלפון, אני חוזר אליך אישית. בלי מוקד, בלי בוט, בלי סיבוב.</p>
+        </div>
+        <div class="lead-form-fields">
+          <div class="field">
+            <label for="name-hero">שם</label>
+            <input id="name-hero" name="name" type="text" autocomplete="name" required>
+            <span class="field-error" aria-live="polite"></span>
+          </div>
+          <div class="field">
+            <label for="phone-hero">טלפון</label>
+            <input id="phone-hero" name="phone" type="tel" inputmode="numeric" autocomplete="tel" required>
+            <span class="field-error" aria-live="polite"></span>
+          </div>
+          <button type="submit" class="btn btn-accent btn-lg btn-block">
+            <span class="btn-label">לשיחה קצרה איתי</span>
+          </button>
+        </div>
+        <p class="lead-form-note">ראם חוזר אליך תוך 24 שעות · לא יהיה ספאם, לא יהיה לחץ</p>
+        <p class="lead-form-success" role="status" aria-live="polite" hidden>קיבלתי! נפתח לך וואטסאפ כדי לסגור פרטים אחרונים 🙌</p>
+      </form>
+    </div>
+  </section>
+
+  <!-- ============ 3. BELIEF BREAK ============ -->
+  <section class="belief-break">
+    <div class="wrap">
+      <h2 class="reveal">לפני שאתה אומר לעצמך<br>"כבר ניסיתי הכל"</h2>
+      <ul class="belief-list">
+        <li class="reveal"><span class="x-icon" aria-hidden="true">✕</span> בלי תוכניות גנריות מהאינטרנט.</li>
+        <li class="reveal"><span class="x-icon" aria-hidden="true">✕</span> בלי להרוג את עצמך ב-6 אימונים בשבוע.</li>
+        <li class="reveal"><span class="x-icon" aria-hidden="true">✕</span> ובלי תפריט שמרגיש כמו עונש.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ 4. PROOF STAT ============ -->
+  <section class="proof-stat">
+    <div class="wrap proof-stat-grid">
+      <div class="proof-stat-copy reveal">
+        <h2>איך הצלחתי להוריד ליותר מ־20 בחורים בממוצע 8 ק"ג תוך 90 יום?</h2>
+        <p class="proof-stat-sub">בלי קיצורי דרך, בלי הבטחות ריקות. רק תהליך שעובד, שוב ושוב, כל פעם מחדש.</p>
+        <a href="#lead-form-mid" class="btn btn-accent js-cta-scroll">רוצה שגם אני אהיה הבא בתור</a>
+      </div>
+      <div class="proof-stat-media reveal">
+        <img src="assets/optimized/portraits/whoami-ram.webp" width="1100" height="2380" loading="lazy" alt="ראם, מאמן כושר אישי">
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 5. PAIN ============ -->
+  <section class="pain">
+    <div class="wrap pain-wrap">
+      <p class="pain-text reveal">
+        אתה בים עם החברים, כולם מורידים חולצה, ואתה נשאר עם החולצה.<br>
+        או שחבר זורק עקיצה "בצחוק" על הבטן, כולם צוחקים, ואתה מחייך בחוץ, אבל בפנים זה שורף.<br>
+        מסתכל בראי ויודע שאתה מתאמן. יודע שאתה שם את המאמץ. אבל משהו לא עובד, ואתה לא בטוח מה.<br>
+        <strong>זה לא בגלל שאתה עצלן. זה בגלל שאף אחד לא סידר לך את הבסיס נכון.</strong>
+      </p>
+      <div class="mini-cta reveal">
+        <p class="mini-cta-text">רוצה לשנות את זה? נדבר.</p>
+        <a href="#lead-form-mid" class="btn btn-accent js-cta-scroll">שיחת היכרות קצרה, בלי עלות</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FORM #2 — mid page, after the pain section -->
+  <section class="cta-form-section cta-form-section--compact" id="lead-form-mid-wrap">
+    <div class="wrap">
+      <form class="lead-form lead-form--compact reveal" id="lead-form-mid" novalidate>
+        <div class="lead-form-head">
+          <h2>נמאס לך? בוא נשנה את זה, עכשיו</h2>
+          <p>שיחת היכרות קצרה, בלי עלות, בלי התחייבות</p>
+        </div>
+        <div class="lead-form-fields lead-form-fields--inline">
+          <div class="field">
+            <label for="name-mid">שם</label>
+            <input id="name-mid" name="name" type="text" autocomplete="name" required>
+            <span class="field-error" aria-live="polite"></span>
+          </div>
+          <div class="field">
+            <label for="phone-mid">טלפון</label>
+            <input id="phone-mid" name="phone" type="tel" inputmode="numeric" autocomplete="tel" required>
+            <span class="field-error" aria-live="polite"></span>
+          </div>
+          <button type="submit" class="btn btn-accent btn-block">
+            <span class="btn-label">רוצה לשיחה</span>
+          </button>
+        </div>
+        <p class="lead-form-success" role="status" aria-live="polite" hidden>קיבלתי! נפתח לך וואטסאפ כדי לסגור פרטים אחרונים 🙌</p>
+      </form>
+    </div>
+  </section>
+
+  <!-- ============ 6. CASE STUDY — DROR ============ -->
+  <section class="case-study">
+    <div class="wrap case-grid">
+      <div class="case-copy reveal">
+        <p class="eyebrow">קייס אמיתי</p>
+        <h2>תכירו את דרור.</h2>
+        <p>
+          דרור הגיע אליי אחרי שהתאמן לבד תקופה ארוכה, קשה וכבדה, ולא ראה שינוי.
+          לא היה לו תפריט מאוזן, לא היה לו כיוון, ולא היה לו מישהו שסוגר לו את הפינות.
+        </p>
+        <p>
+          אחרי התהליך? ירידה באחוז שומן, שמירה על מסת שריר, ומשמעת שהוא מרגיש בכל תחום בחיים.
+        </p>
+        <blockquote>"בחיים שלי לא הייתי שמח על בחירה כמו שאני שמח על זה שבחרתי לעשות את התהליך עם ראם."</blockquote>
+        <p class="case-signature">דרור ברעמי</p>
+      </div>
+      <div class="case-media reveal">
+        <img src="assets/optimized/testimonials/review-03.webp" width="720" height="1109" loading="lazy" alt="צילום מסך שיחת וואטסאפ אמיתית עם דרור ברעמי על התהליך שעשה עם ראם" class="lightbox-trigger" data-caption="דרור ברעמי">
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 7. PROCESS ============ -->
+  <section class="process" id="process">
+    <div class="wrap">
+      <h2 class="reveal">מסלול המהפך: 5 שלבים</h2>
+      <ol class="steps">
+        <li class="step reveal">
+          <span class="step-num">1</span>
+          <div class="step-content">
+            <strong>שיחת אפיון</strong>
+            <span>מבינים יחד את הגוף שלך, את סדר היום שלך, ומה עצר אותך עד עכשיו.</span>
+          </div>
+        </li>
+        <li class="step reveal">
+          <span class="step-num">2</span>
+          <div class="step-content">
+            <strong>תוכנית אישית</strong>
+            <span>תפריט גמיש עם אוכל שאתה אוהב + תוכנית אימונים שמתאימה לרמה ולזמן שלך, לא תוכנית גנרית.</span>
+          </div>
+        </li>
+        <li class="step reveal">
+          <span class="step-num">3</span>
+          <div class="step-content">
+            <strong>אימונים ומעקב שוטף</strong>
+            <span>לפחות 3 אימונים בשבוע, והכמות המדויקת נסגרת יחד איתך בשיחת האפיון לפי מה שאתה צריך. ראם זמין, עונה, ומדייק תוך כדי, לא נעלם לך.</span>
+          </div>
+        </li>
+        <li class="step reveal">
+          <span class="step-num">4</span>
+          <div class="step-content">
+            <strong>מעקב שבועי</strong>
+            <span>בודקים יחד מה עובד, מתאימים בזמן אמת, ומוודאים שאתה מתקדם בקצב הנכון.</span>
+          </div>
+        </li>
+        <li class="step reveal">
+          <span class="step-num">5</span>
+          <div class="step-content">
+            <strong>תוצאות</strong>
+            <span>ממוצע של 6 עד 10 ק"ג בחודשיים הראשונים, תלוי בנקודת הפתיחה שלך.</span>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ============ 8. MORE TESTIMONIALS ============ -->
+  <section class="testimonials" id="testimonials">
+    <div class="wrap">
+      <h2 class="reveal">עוד עדויות מאנשים שכבר עשו את זה</h2>
+      <div class="quote-grid">
+        <div class="quote-card reveal">
+          <p class="quote-text">"ירדתי 20 קילו. הפסקתי לעשן לפני 23 יום. נהייתי מכור להתקדמות, ומה שהתחיל כתהליך כושר הפך להיות הרבה יותר מזה."</p>
+          <p class="quote-person">אור כהן</p>
+          <p class="quote-result">-20 ק"ג · הפסיק לעשן · 5 חודשים בתהליך</p>
+        </div>
+        <div class="quote-card reveal">
+          <p class="quote-text">"לחשוב ש-3 חודשים לפני התהליך הייתי 108.9, והיום אני כבר 11 קילו פחות. ההרגשה מעולה."</p>
+          <p class="quote-person">רז חדד</p>
+          <p class="quote-result">-11 ק"ג ב-3 חודשים</p>
+        </div>
+        <div class="quote-card reveal">
+          <p class="quote-text">"תוך פחות מחצי שנה עליתי 7 קילו נקיים, יותר מקילו בחודש. ועוד עם כל הבלתמים שהיו לאורך הדרך. זה לא נורמלי."</p>
+          <p class="quote-person">רוי אלי</p>
+          <p class="quote-result">+7 ק"ג מסה נקייה · פחות מחצי שנה</p>
+        </div>
+        <div class="quote-card reveal">
+          <p class="quote-text">"עקפתי את הציפיות קילומטרים אחורה. התחלנו 79 ק"ג, עכשיו 84.9, ובשלב הזה אני מקבל מחמאות מכל הכיוונים."</p>
+          <p class="quote-person">איליה</p>
+          <p class="quote-result">+6 ק"ג מסה · מחמאות מהסביבה</p>
+        </div>
+      </div>
+
+      <h3 class="screenshots-heading reveal">כל השיחות האמיתיות, ישירות מהוואטסאפ</h3>
+      <div class="screenshot-grid" id="screenshot-grid">
+        <!-- populated identically in markup for progressive enhancement -->
+        <button class="screenshot-item reveal" data-caption="אור כהן: -20 ק&quot;ג, הפסיק לעשן">
+          <img src="assets/optimized/testimonials/review-01.webp" width="720" height="1174" loading="lazy" alt="צילום מסך ביקורת וואטסאפ מאור כהן">
+        </button>
+        <button class="screenshot-item reveal" data-caption="רז חדד: -11 ק&quot;ג ב-3 חודשים">
+          <img src="assets/optimized/testimonials/review-02.webp" width="720" height="533" loading="lazy" alt="צילום מסך ביקורת וואטסאפ מרז חדד">
+        </button>
+        <button class="screenshot-item reveal" data-caption="דרור ברעמי: קייס סטאדי">
+          <img src="assets/optimized/testimonials/review-03.webp" width="720" height="1109" loading="lazy" alt="צילום מסך ביקורת וואטסאפ מדרור ברעמי">
+        </button>
+        <button class="screenshot-item reveal" data-caption="רוי אלי: +7 ק&quot;ג מסה נקייה">
+          <img src="assets/optimized/testimonials/review-04.webp" width="720" height="931" loading="lazy" alt="צילום מסך ביקורת וואטסאפ מרוי אלי">
+        </button>
+        <button class="screenshot-item reveal" data-caption="איליה: +6 ק&quot;ג מסה">
+          <img src="assets/optimized/testimonials/review-05.webp" width="720" height="866" loading="lazy" alt="צילום מסך ביקורת וואטסאפ מאיליה">
+        </button>
+        <button class="screenshot-item reveal" data-caption="טוהר אזורה">
+          <img src="assets/optimized/testimonials/review-06.webp" width="720" height="966" loading="lazy" alt="צילום מסך ביקורת וואטסאפ מטוהר אזורה">
+        </button>
+        <button class="screenshot-item reveal" data-caption="עומרי סולימני">
+          <img src="assets/optimized/testimonials/review-07.webp" width="720" height="1114" loading="lazy" alt="צילום מסך ביקורת וואטסאפ מעומרי סולימני">
+        </button>
+        <button class="screenshot-item reveal" data-caption="רון בילייה: ליווי תזונה בלבד">
+          <img src="assets/optimized/testimonials/review-08.webp" width="720" height="1056" loading="lazy" alt="צילום מסך ביקורת וואטסאפ מרון בילייה">
+        </button>
+        <button class="screenshot-item reveal" data-caption="איליה: מחמאות מהסביבה">
+          <img src="assets/optimized/testimonials/review-09.webp" width="720" height="707" loading="lazy" alt="צילום מסך ביקורת וואטסאפ נוסף מאיליה">
+        </button>
+        <button class="screenshot-item reveal" data-caption="מתן">
+          <img src="assets/optimized/testimonials/review-10.webp" width="720" height="1036" loading="lazy" alt="צילום מסך ביקורת וואטסאפ ממתן">
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 9. VIDEO TESTIMONIALS ============ -->
+  <section class="video-testimonials">
+    <div class="wrap">
+      <h2 class="reveal">"לא חייבים להאמין לי.<br>תשמעו מהם."</h2>
+      <div class="video-grid">
+        <button class="video-card reveal" data-src="assets/optimized/videos/raz.mp4" data-name="רז">
+          <span class="video-play" aria-hidden="true">▶</span>
+          <span class="video-name">רז</span>
+        </button>
+        <button class="video-card reveal" data-src="assets/optimized/videos/ron-bilya.mp4" data-name="רון בילייה">
+          <span class="video-play" aria-hidden="true">▶</span>
+          <span class="video-name">רון בילייה</span>
+        </button>
+        <button class="video-card reveal" data-src="assets/optimized/videos/matan.mp4" data-name="מתן">
+          <span class="video-play" aria-hidden="true">▶</span>
+          <span class="video-name">מתן</span>
+        </button>
+        <button class="video-card reveal" data-src="assets/optimized/videos/erol.mp4" data-name="ארול">
+          <span class="video-play" aria-hidden="true">▶</span>
+          <span class="video-name">ארול</span>
+        </button>
+        <button class="video-card reveal" data-src="assets/optimized/videos/yair.mp4" data-name="יאיר">
+          <span class="video-play" aria-hidden="true">▶</span>
+          <span class="video-name">יאיר</span>
+        </button>
+        <button class="video-card reveal" data-src="assets/optimized/videos/niv.mp4" data-name="ניב">
+          <span class="video-play" aria-hidden="true">▶</span>
+          <span class="video-name">ניב</span>
+        </button>
+        <button class="video-card reveal" data-src="assets/optimized/videos/amit-ozen.mp4" data-name="עמית אוזן">
+          <span class="video-play" aria-hidden="true">▶</span>
+          <span class="video-name">עמית אוזן</span>
+        </button>
+        <button class="video-card reveal" data-src="assets/optimized/videos/tuvs.mp4" data-name="מתאמן בתהליך">
+          <span class="video-play" aria-hidden="true">▶</span>
+          <span class="video-name">מתאמן בתהליך</span>
+        </button>
+        <button class="video-card reveal" data-src="assets/optimized/videos/trainee-1.mp4" data-name="מתאמן בתהליך">
+          <span class="video-play" aria-hidden="true">▶</span>
+          <span class="video-name">מתאמן בתהליך</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 10. WHO AM I ============ -->
+  <section class="who-am-i">
+    <div class="wrap who-grid">
+      <div class="who-media reveal">
+        <button class="video-card video-card--wide" data-src="assets/optimized/videos/ram-story.mp4" data-name="הסיפור שלי" style="background-image:url('assets/optimized/posters/ram-story-poster.webp')" aria-label="נגן סרטון: ראם מספר את הסיפור שלו">
+          <span class="video-play" aria-hidden="true">▶</span>
+          <span class="video-name">הסיפור שלי, במילים שלי</span>
+        </button>
+        <img src="assets/optimized/icons/logo-wordmark.webp" alt="(R)EVOLUTION · Break Your Limits" width="160" height="52" class="who-media-logo">
+      </div>
+      <div class="who-copy reveal">
+        <h2>לא בניתי את זה כי "אהבתי כושר". בניתי את זה כי בזבזתי שנים שלמות על טעויות שאתה עומד לחזור עליהן עכשיו.</h2>
+        <p>
+          שנים התאמנתי לבד בלי לראות תוצאה אמיתית. הייתי בטוח שאני יודע הכל, ועשיתי כל טעות אפשרית שיש.
+          לא רק שלא התקדמתי, גם איבדתי זמן שאני לא מקבל בחזרה.
+        </p>
+        <p>
+          כשהבנתי כמה מזה יכולתי לחסוך לעצמי עם ליווי נכון, הפכתי למאמן. לא בשביל תעודה על הקיר.
+          נמאס לי לראות בחורים עושים בדיוק את מה שאני עשיתי: מתאמנים קשה, מנסים לבד, ונשארים באותה נקודה.
+        </p>
+        <p>
+          יותר מ<strong>20 בחורים</strong> כבר עברו איתי את התהליך, וכולם התחילו מאותה נקודה בדיוק: לא אהבו
+          את מה שראו במראה. רובם מסיימים את התהליך עד הסוף, ולא מעטים חוזרים לסבב שני כדי להתקדם עוד.
+        </p>
+        <p class="who-guarantee">
+          אני עומד מאחורי זה במאה אחוז. <strong>אם תשים את כל העבודה ולא תראה תוצאה, תקבל ממני תהליך נוסף
+          לגמרי בחינם, או החזר מלא על כל שקל.</strong> אתה לא מסתכן בכלום.
+        </p>
+        <a href="#lead-form-final" class="btn btn-accent js-cta-scroll">בוא נדבר, שיחת היכרות קצרה</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 11. BEFORE / AFTER ============ -->
+  <section class="before-after" id="before-after">
+    <div class="wrap">
+      <h2 class="reveal">"התוצאות מדברות בעצמן."</h2>
+      <div class="carousel reveal">
+        <button class="carousel-btn carousel-btn--prev" id="ba-prev" aria-label="התמונה הקודמת">‹</button>
+        <div class="carousel-track" id="ba-grid">
+          <button class="ba-item" data-caption="תוצאה אמיתית מהתהליך">
+            <img src="assets/optimized/before-after/transform-01.webp" width="1000" height="677" loading="lazy" alt="תמונת לפני ואחרי אמיתית של מתאמן בתהליך עם ראם">
+          </button>
+          <button class="ba-item" data-caption="תוצאה אמיתית מהתהליך">
+            <img src="assets/optimized/before-after/transform-02.webp" width="1000" height="1268" loading="lazy" alt="תמונת לפני ואחרי אמיתית של מתאמן בתהליך עם ראם">
+          </button>
+          <button class="ba-item" data-caption="תוצאה אמיתית מהתהליך">
+            <img src="assets/optimized/before-after/transform-03.webp" width="1000" height="896" loading="lazy" alt="תמונת לפני ואחרי אמיתית של מתאמן בתהליך עם ראם">
+          </button>
+          <button class="ba-item" data-caption="תוצאה אמיתית מהתהליך">
+            <img src="assets/optimized/before-after/transform-04.webp" width="1000" height="874" loading="lazy" alt="תמונת לפני ואחרי אמיתית של מתאמן בתהליך עם ראם">
+          </button>
+          <button class="ba-item" data-caption="תוצאה אמיתית מהתהליך">
+            <img src="assets/optimized/before-after/transform-05.webp" width="1000" height="1230" loading="lazy" alt="תמונת לפני ואחרי אמיתית של מתאמן בתהליך עם ראם">
+          </button>
+          <button class="ba-item" data-caption="תוצאה אמיתית מהתהליך">
+            <img src="assets/optimized/before-after/transform-06.webp" width="1000" height="882" loading="lazy" alt="תמונת לפני ואחרי אמיתית של מתאמן בתהליך עם ראם">
+          </button>
+          <button class="ba-item" data-caption="תוצאה אמיתית מהתהליך">
+            <img src="assets/optimized/before-after/transform-07.webp" width="1000" height="1185" loading="lazy" alt="תמונת לפני ואחרי אמיתית של מתאמן בתהליך עם ראם, פרטי הפנים טושטשו לבקשת המתאמן">
+          </button>
+          <button class="ba-item" data-caption="תוצאה אמיתית מהתהליך">
+            <img src="assets/optimized/before-after/transform-08.webp" width="1000" height="1111" loading="lazy" alt="תמונת לפני ואחרי אמיתית של מתאמן בתהליך עם ראם">
+          </button>
+          <button class="ba-item" data-caption="תוצאה אמיתית מהתהליך">
+            <img src="assets/optimized/before-after/transform-09.webp" width="1000" height="927" loading="lazy" alt="תמונת לפני ואחרי אמיתית של מתאמן בתהליך עם ראם">
+          </button>
+          <button class="ba-item" data-caption="תוצאה אמיתית מהתהליך">
+            <img src="assets/optimized/before-after/transform-10.webp" width="1000" height="882" loading="lazy" alt="תמונת לפני ואחרי אמיתית של מתאמן בתהליך עם ראם">
+          </button>
+          <button class="ba-item" data-caption="תוצאה אמיתית מהתהליך">
+            <img src="assets/optimized/before-after/transform-11.webp" width="1000" height="892" loading="lazy" alt="תמונת לפני ואחרי אמיתית של מתאמן בתהליך עם ראם">
+          </button>
+          <button class="ba-item" data-caption="תוצאה אמיתית מהתהליך">
+            <img src="assets/optimized/before-after/transform-12.webp" width="1000" height="885" loading="lazy" alt="תמונת לפני ואחרי אמיתית של מתאמן בתהליך עם ראם">
+          </button>
+          <button class="ba-item" data-caption="תוצאה אמיתית מהתהליך">
+            <img src="assets/optimized/before-after/transform-13.webp" width="1000" height="886" loading="lazy" alt="תמונת לפני ואחרי אמיתית של מתאמן בתהליך עם ראם">
+          </button>
+          <button class="ba-item" data-caption="באמצע התהליך">
+            <img src="assets/optimized/before-after/transform-14.webp" width="1000" height="918" loading="lazy" alt="תמונת לפני ואחרי אמיתית של מתאמן באמצע התהליך עם ראם">
+          </button>
+          <button class="ba-item" data-caption="תוצאה אמיתית מהתהליך">
+            <img src="assets/optimized/before-after/transform-15.webp" width="1000" height="952" loading="lazy" alt="תמונת לפני ואחרי אמיתית של מתאמן בתהליך עם ראם">
+          </button>
+          <button class="ba-item" data-caption="תוצאה אמיתית מהתהליך">
+            <img src="assets/optimized/before-after/transform-16.webp" width="1000" height="920" loading="lazy" alt="תמונת לפני ואחרי אמיתית של מתאמן בתהליך עם ראם">
+          </button>
+          <button class="ba-item" data-caption="תוצאה אמיתית מהתהליך">
+            <img src="assets/optimized/before-after/transform-17.webp" width="1000" height="885" loading="lazy" alt="תמונת לפני ואחרי אמיתית של מתאמן בתהליך עם ראם">
+          </button>
+          <button class="ba-item" data-caption="תוצאה אמיתית מהתהליך">
+            <img src="assets/optimized/before-after/transform-18.webp" width="1000" height="888" loading="lazy" alt="תמונת לפני ואחרי אמיתית של מתאמן בתהליך עם ראם">
+          </button>
+        </div>
+        <button class="carousel-btn carousel-btn--next" id="ba-next" aria-label="התמונה הבאה">›</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 12. FAQ ============ -->
+  <section class="faq" id="faq">
+    <div class="wrap">
+      <h2 class="reveal">שאלות ותשובות</h2>
+      <div class="faq-list">
+        <details class="faq-item reveal">
+          <summary>כמה זמן לוקח לראות תוצאות?</summary>
+          <p>רוב המתאמנים מתחילים לראות שינוי כבר בחודש הראשון, בעיקר באנרגיה ובמשקל. שינוי ויזואלי ברור מגיע בדרך כלל בחודשיים הראשונים, תלוי בנקודת הפתיחה.</p>
+        </details>
+        <details class="faq-item reveal">
+          <summary>מה קורה אם שברתי את התפריט?</summary>
+          <p>זה קורה לכולם, וזה חלק מהתהליך. לא מענישים ולא מתחילים מהתחלה, מבינים למה זה קרה ומתאימים. התפריט בנוי להיות גמיש מלכתחילה.</p>
+        </details>
+        <details class="faq-item reveal">
+          <summary>כמה אימונים בשבוע צריך?</summary>
+          <p>המינימום הוא 3 אימונים בשבוע. הכמות המדויקת נקבעת יחד איתך בשיחת האפיון, לפי מה שאתה צריך ולפי סדר היום האמיתי שלך, לא לפי סדר יום אידיאלי שאין לך.</p>
+        </details>
+        <details class="faq-item reveal">
+          <summary>אתה זמין אם יש לי שאלות באמצע?</summary>
+          <p>כן. שולח הודעה ומקבל תשובה, לא נעלם עליך. זה אחד הדברים שמתאמנים מציינים שהכי שינה להם את החוויה.</p>
+        </details>
+        <details class="faq-item reveal">
+          <summary>זה מתאים גם אם אני מתחיל מאפס ומעולם לא התאמנתי?</summary>
+          <p>בדיוק בשבילך. התוכנית מתחילה מהרמה שלך, לא מרמה של מישהו שמתאמן שנים. שבוע ראשון בכוונה קל יותר, כדי שתיכנס לריתמוס נכון.</p>
+        </details>
+        <details class="faq-item reveal">
+          <summary>אתה מתחייב לתוצאות?</summary>
+          <p>כן, ולא סתם מילים: אם אתה שם את כל העבודה ולא רואה תוצאה, אתה מקבל ממני תהליך נוסף לגמרי בחינם, או שאתה מקבל בחזרה כל שקל ששילמת. אני שם זמינות מלאה, מעקב שבועי, והתאמה של התוכנית כל הדרך. הצד שלך הוא לבוא עם הראש בפנים, הצד שלי הוא לדאוג שזה יעבוד. אני עומד מאחורי זה.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FINAL CTA ============ -->
+  <section class="final-cta" id="lead-form-final-wrap">
+    <div class="wrap">
+      <div class="final-cta-head reveal">
+        <h2>אז, מוכן להפסיק לדבר ולהתחיל?</h2>
+        <p>תשאיר פרטים ואני חוזר אליך אישית לשיחת היכרות קצרה.<br>בלי עלות, בלי מכירה, רק שיחה כנה.</p>
+      </div>
+      <form class="lead-form lead-form--final reveal" id="lead-form-final" novalidate>
+        <div class="lead-form-fields">
+          <div class="field">
+            <label for="name-final">שם</label>
+            <input id="name-final" name="name" type="text" autocomplete="name" required>
+            <span class="field-error" aria-live="polite"></span>
+          </div>
+          <div class="field">
+            <label for="phone-final">טלפון</label>
+            <input id="phone-final" name="phone" type="tel" inputmode="numeric" autocomplete="tel" required>
+            <span class="field-error" aria-live="polite"></span>
+          </div>
+          <button type="submit" class="btn btn-accent btn-lg btn-block">
+            <span class="btn-label">אני רוצה להתחיל</span>
+          </button>
+        </div>
+        <p class="lead-form-note">ראם חוזר אליך תוך 24 שעות · לא יהיה ספאם, לא יהיה לחץ</p>
+        <p class="lead-form-success" role="status" aria-live="polite" hidden>קיבלתי! נפתח לך וואטסאפ כדי לסגור פרטים אחרונים 🙌</p>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div class="footer-brand">
+      <img src="assets/optimized/icons/logo-wordmark.webp" alt="(R)EVOLUTION · Break Your Limits" width="200" height="65">
+      <p>אימון כושר אישי אונליין · מכל מקום בארץ</p>
+    </div>
+    <div class="footer-links">
+      <a href="https://instagram.com/yourcoach.reem" target="_blank" rel="noopener noreferrer" class="footer-icon-link js-track-contact" data-contact-type="instagram" aria-label="אינסטגרם של ראם">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <rect x="2" y="2" width="20" height="20" rx="5"/>
+          <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+          <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+        </svg>
+      </a>
+      <a href="#" class="footer-icon-link js-whatsapp-link js-track-contact" data-contact-type="whatsapp" aria-label="וואטסאפ">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true">
+          <path d="M17.6 6.32A7.85 7.85 0 0 0 12.05 4a7.94 7.94 0 0 0-6.9 11.9L4 20l4.2-1.1a7.9 7.9 0 0 0 3.85 1h0a7.94 7.94 0 0 0 7.94-7.94 7.85 7.85 0 0 0-2.35-5.58zM12.05 18.4h0a6.6 6.6 0 0 1-3.36-.92l-.24-.14-2.5.66.67-2.44-.16-.25a6.6 6.6 0 1 1 12.28-3.4 6.56 6.56 0 0 1-6.69 6.5zm3.6-4.93c-.2-.1-1.17-.58-1.35-.64s-.32-.1-.45.1-.5.64-.62.77-.23.15-.43.05a5.4 5.4 0 0 1-1.6-.98 5.9 5.9 0 0 1-1.1-1.36c-.12-.2 0-.3.1-.4l.28-.32a1.3 1.3 0 0 0 .18-.3.35.35 0 0 0 0-.32c0-.1-.45-1.07-.6-1.47s-.32-.33-.44-.33h-.38a.72.72 0 0 0-.52.24 2.2 2.2 0 0 0-.68 1.63c0 .96.7 1.9.8 2a10 10 0 0 0 3.8 3.4c.53.23.94.36 1.26.46.53.17 1 .15 1.38.09.42-.06 1.3-.53 1.48-1.05s.18-.95.13-1.05-.18-.16-.38-.26z"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+  <div class="wrap footer-legal">
+    <nav class="footer-legal-links" aria-label="מידע משפטי">
+      <a href="terms.html">תקנון ותנאי שימוש</a>
+      <a href="privacy.html">מדיניות פרטיות</a>
+      <a href="accessibility.html">הצהרת נגישות</a>
+    </nav>
+    <p>האתר משתמש בכלי ניתוח (Google Analytics) כדי להבין כיצד משתמשים גולשים בו, לצורך שיפור השירות בלבד.</p>
+    <p class="footer-copyright">&copy; <span id="year"></span> (R)EVOLUTION. כל הזכויות שמורות. · האתר נבנה ע"י <a href="https://orhazan.dev" target="_blank" rel="noopener noreferrer">Or Hazan</a></p>
+  </div>
+</footer>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox" hidden>
+  <button class="lightbox-close" id="lightbox-close" aria-label="סגור תצוגה מוגדלת">✕</button>
+  <figure class="lightbox-figure">
+    <img id="lightbox-img" src="" alt="">
+    <figcaption id="lightbox-caption"></figcaption>
+  </figure>
+</div>
+
+<!-- UserWay accessibility widget — color matched to brand accent. Position is
+     handled responsively in js/main.js (bottom-left desktop / bottom-right
+     mobile, next to the sticky WhatsApp button). -->
+<script>
+  window._userway_config = { color: "#9c2f92" };
+</script>
+<script src="https://cdn.userway.org/widget.js" data-account="9vx3QMkjHJ"></script>
+
+<!-- GSAP -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+
+<!-- GA4 (placeholder — replace G-XXXXXXX with the real Measurement ID before launch) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXX');
+</script>
+
+<script src="js/main.js" defer></script>
+</body>
+</html>

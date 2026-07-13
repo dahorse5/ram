@@ -1,0 +1,10 @@
+.vercel
+
+# Raw source assets kept locally for archival/future edits — the deployed
+# site only ever references assets/optimized/**, and several of these raw
+# files exceed GitHub's 100MB per-file limit.
+assets/portraits
+assets/before-after
+assets/testimonials
+assets/video
+content

@@ -1,0 +1,7 @@
+# Raw source assets kept locally for archival/future edits — the live site
+# only ever references assets/optimized/**, so these don't need to be deployed.
+assets/portraits
+assets/before-after
+assets/testimonials
+assets/video
+content

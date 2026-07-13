@@ -1,0 +1,11 @@
+{
+  "name": "(R)EVOLUTION · Break Your Limits",
+  "short_name": "(R)EVOLUTION",
+  "icons": [
+    { "src": "assets/optimized/icons/android-chrome-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "assets/optimized/icons/android-chrome-512.png", "sizes": "512x512", "type": "image/png" }
+  ],
+  "theme_color": "#120f16",
+  "background_color": "#120f16",
+  "display": "standalone"
+}
