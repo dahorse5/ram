@@ -587,6 +587,20 @@ p { max-width: 65ch; }
 .legal-page .back-link { display: inline-block; margin-bottom: var(--space-5); color: var(--ink-300); font-weight: 600; }
 .legal-page .back-link:hover { color: var(--accent-bright); }
 
+/* ---------------------------------- Sticky CTA ---------------------------------- */
+.sticky-cta {
+  position: fixed; bottom: 0; inset-inline: 0; z-index: 400;
+  display: none;
+  background: var(--ink-900);
+  border-top: 1px solid var(--border-dark);
+  padding: 10px var(--space-3);
+  padding-bottom: max(10px, env(safe-area-inset-bottom));
+  /* reserve room on the inline-start side for the UserWay bottom widget
+     so it doesn't overlap the button */
+  padding-inline-start: 104px;
+}
+.sticky-cta .btn { font-size: 15px; }
+
 /* ---------------------------------- Lightbox ---------------------------------- */
 .lightbox {
   position: fixed; inset: 0; z-index: 900;
@@ -626,6 +640,8 @@ html.js .reveal.is-visible { opacity: 1; transform: translateY(0); }
   .screenshot-grid { grid-template-columns: repeat(2, 1fr); }
   .carousel-track .ba-item { width: min(78vw, 280px); }
   .carousel-btn { width: 40px; height: 40px; font-size: 17px; }
+  .sticky-cta { display: block; }
+  body { padding-bottom: 68px; }
 }
 
 @media (max-width: 560px) {
