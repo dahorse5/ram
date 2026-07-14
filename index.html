@@ -93,20 +93,31 @@
           <h2>רוצה את הגוף הזה? זה <span class="accent-text">הצעד הראשון</span></h2>
           <p>תשאיר שם וטלפון, אני חוזר אליך אישית. בלי מוקד, בלי בוט, בלי סיבוב.</p>
         </div>
+        <p class="form-honesty">רגע של כנות: רוב המאמנים ינסו למכור לך. אם זה מה שאתה מצפה לו, אני כנראה לא הכתובת. <mark>זה תהליך למי שבאמת רוצה לעבוד, לא לעוד מאמן שירדוף אחריך.</mark> אם אתה בפנים, תשאיר פרטים.</p>
         <div class="lead-form-fields">
           <div class="field">
             <label for="name-hero">איך קוראים לך?</label>
-            <input id="name-hero" name="name" type="text" autocomplete="name" placeholder="השם שלך" required>
+            <input id="name-hero" name="name" type="text" autocomplete="name" placeholder="איך קוראים לך?" required>
             <span class="field-error" aria-live="polite"></span>
           </div>
           <div class="field">
             <label for="phone-hero">לאן מתקשרים?</label>
-            <input id="phone-hero" name="phone" type="tel" inputmode="numeric" autocomplete="tel" placeholder="050-0000000" required>
+            <input id="phone-hero" name="phone" type="tel" inputmode="numeric" autocomplete="tel" placeholder="מה המספר שלך?" required>
             <span class="field-error" aria-live="polite"></span>
           </div>
-          <button type="submit" class="btn btn-accent btn-lg btn-block">
-            <span class="btn-label">כן, אני בפנים</span>
-          </button>
+        </div>
+        <button type="submit" class="btn btn-gradient btn-lg btn-block">
+          <span class="btn-label">כן, אני בפנים</span>
+        </button>
+        <div class="form-proof">
+          <span class="form-proof-stars" aria-hidden="true">★★★★★</span>
+          <span class="form-proof-text">+20 מתאמנים כבר עברו את התהליך</span>
+          <span class="form-proof-avatars" aria-hidden="true">
+            <img src="assets/optimized/posters/raz-poster.webp" alt="" loading="lazy">
+            <img src="assets/optimized/posters/matan-poster.webp" alt="" loading="lazy">
+            <img src="assets/optimized/posters/ron-bilya-poster.webp" alt="" loading="lazy">
+            <img src="assets/optimized/posters/erol-poster.webp" alt="" loading="lazy">
+          </span>
         </div>
         <p class="lead-form-note">אני חוזר אליך תוך 24 שעות · בלי ספאם, בלי לחץ</p>
         <p class="lead-form-success" role="status" aria-live="polite" hidden>קיבלתי! נפתח לך וואטסאפ כדי לסגור פרטים אחרונים 🙌</p>
@@ -123,6 +134,25 @@
         <li class="reveal"><span class="x-icon" aria-hidden="true">✕</span> בלי להרוג את עצמך ב-6 אימונים בשבוע.</li>
         <li class="reveal"><span class="x-icon" aria-hidden="true">✕</span> ובלי תפריט שמרגיש כמו עונש.</li>
       </ul>
+
+      <div class="fit-check reveal">
+        <div class="fit-check-col fit-check-col--no">
+          <h3>זה לא בשבילך אם:</h3>
+          <ul>
+            <li><span class="x-icon" aria-hidden="true">✕</span> אתה מחפש קיצור דרך או פתרון קסם.</li>
+            <li><span class="x-icon" aria-hidden="true">✕</span> אתה רוצה לנסות חודש "בלי התחייבות" ולראות אם בא לך.</li>
+            <li><span class="x-icon" aria-hidden="true">✕</span> לא מוכן לעקוב אחרי תוכנית ברורה.</li>
+          </ul>
+        </div>
+        <div class="fit-check-col fit-check-col--yes">
+          <h3>אבל זה בדיוק בשבילך אם:</h3>
+          <ul>
+            <li><span class="check-icon" aria-hidden="true">✓</span> אתה מתאמן תקופה ומרגיש תקוע.</li>
+            <li><span class="check-icon" aria-hidden="true">✓</span> ניסית לבד או עם מאמנים אחרים ולא ראית מספיק תוצאה.</li>
+            <li><span class="check-icon" aria-hidden="true">✓</span> מוכן לעבוד ברצינות עם ליווי אמיתי, לא רק עוד תוכנית.</li>
+          </ul>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -164,21 +194,22 @@
           <h2>נמאס לך? בוא נשנה את זה, <span class="accent-text">עכשיו</span></h2>
           <p>תכתוב לי כמה מילים, אני חוזר אליך אישית</p>
         </div>
-        <div class="lead-form-fields lead-form-fields--inline">
+        <p class="form-honesty"><mark>לא עוד מאמן שירדוף אחריך.</mark> אם אתה מוכן לעבוד ברצינות, אני כאן.</p>
+        <div class="lead-form-fields">
           <div class="field">
             <label for="name-mid">איך קוראים לך?</label>
-            <input id="name-mid" name="name" type="text" autocomplete="name" placeholder="השם שלך" required>
+            <input id="name-mid" name="name" type="text" autocomplete="name" placeholder="איך קוראים לך?" required>
             <span class="field-error" aria-live="polite"></span>
           </div>
           <div class="field">
             <label for="phone-mid">לאן מתקשרים?</label>
-            <input id="phone-mid" name="phone" type="tel" inputmode="numeric" autocomplete="tel" placeholder="050-0000000" required>
+            <input id="phone-mid" name="phone" type="tel" inputmode="numeric" autocomplete="tel" placeholder="מה המספר שלך?" required>
             <span class="field-error" aria-live="polite"></span>
           </div>
-          <button type="submit" class="btn btn-accent btn-block">
-            <span class="btn-label">סגור לי שיחה</span>
-          </button>
         </div>
+        <button type="submit" class="btn btn-gradient btn-block">
+          <span class="btn-label">סגור לי שיחה</span>
+        </button>
         <p class="lead-form-success" role="status" aria-live="polite" hidden>קיבלתי! נפתח לך וואטסאפ כדי לסגור פרטים אחרונים 🙌</p>
       </form>
     </div>
@@ -464,20 +495,31 @@
         <p>תשאיר פרטים ואני כותב לך אישית.<br>בלי מכירה, בלי לחץ, רק שיחה כנה בינינו.</p>
       </div>
       <form class="lead-form lead-form--final reveal" id="lead-form-final" novalidate>
+        <p class="form-honesty">רגע של כנות: אין כאן הבטחות קסם ואין לחץ מכירתי. <mark>יש רק תהליך אמיתי, למי שמוכן להתחייב לעצמו.</mark> אם זה אתה, בוא נדבר.</p>
         <div class="lead-form-fields">
           <div class="field">
             <label for="name-final">איך קוראים לך?</label>
-            <input id="name-final" name="name" type="text" autocomplete="name" placeholder="השם שלך" required>
+            <input id="name-final" name="name" type="text" autocomplete="name" placeholder="איך קוראים לך?" required>
             <span class="field-error" aria-live="polite"></span>
           </div>
           <div class="field">
             <label for="phone-final">לאן מתקשרים?</label>
-            <input id="phone-final" name="phone" type="tel" inputmode="numeric" autocomplete="tel" placeholder="050-0000000" required>
+            <input id="phone-final" name="phone" type="tel" inputmode="numeric" autocomplete="tel" placeholder="מה המספר שלך?" required>
             <span class="field-error" aria-live="polite"></span>
           </div>
-          <button type="submit" class="btn btn-accent btn-lg btn-block">
-            <span class="btn-label">זהו, בוא נתחיל</span>
-          </button>
+        </div>
+        <button type="submit" class="btn btn-gradient btn-lg btn-block">
+          <span class="btn-label">זהו, בוא נתחיל</span>
+        </button>
+        <div class="form-proof">
+          <span class="form-proof-stars" aria-hidden="true">★★★★★</span>
+          <span class="form-proof-text">+20 מתאמנים כבר עברו את התהליך</span>
+          <span class="form-proof-avatars" aria-hidden="true">
+            <img src="assets/optimized/posters/yair-poster.webp" alt="" loading="lazy">
+            <img src="assets/optimized/posters/niv-poster.webp" alt="" loading="lazy">
+            <img src="assets/optimized/posters/amit-ozen-poster.webp" alt="" loading="lazy">
+            <img src="assets/optimized/posters/tuvs-poster.webp" alt="" loading="lazy">
+          </span>
         </div>
         <p class="lead-form-note">אני חוזר אליך תוך 24 שעות · בלי ספאם, בלי לחץ</p>
         <p class="lead-form-success" role="status" aria-live="polite" hidden>קיבלתי! נפתח לך וואטסאפ כדי לסגור פרטים אחרונים 🙌</p>
