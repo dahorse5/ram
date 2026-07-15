@@ -22,7 +22,7 @@
     // Gentle stagger for card grids/lists, so items settle in one after
     // another instead of all at once. Capped so a long grid doesn't end
     // with a large trailing delay.
-    document.querySelectorAll(".quote-grid, #screenshot-grid, .video-grid, .steps").forEach(function (group) {
+    document.querySelectorAll(".quote-grid, .steps, .carousel-track").forEach(function (group) {
       Array.prototype.forEach.call(group.children, function (child, i) {
         child.style.transitionDelay = Math.min(i, 6) * 0.07 + "s";
       });
@@ -270,85 +270,57 @@
   }
 
   // ------------------------------------------------------------------
-  // Before/after carousel
+  // Carousels (before/after, video testimonials, WhatsApp screenshots) —
+  // manual only, no autoplay. The visitor advances every carousel
+  // themselves so a clip they were mid-watching never gets skipped out
+  // from under them.
   // ------------------------------------------------------------------
-  function initCarousel() {
-    var carousel = document.querySelector(".carousel");
-    var track = document.getElementById("ba-grid");
-    var prevBtn = document.getElementById("ba-prev");
-    var nextBtn = document.getElementById("ba-next");
-    if (!carousel || !track || !prevBtn || !nextBtn) return;
+  function initCarousels() {
+    document.querySelectorAll(".carousel").forEach(function (carousel) {
+      var track = carousel.querySelector(".carousel-track");
+      var prevBtn = carousel.querySelector(".carousel-btn--prev");
+      var nextBtn = carousel.querySelector(".carousel-btn--next");
+      if (!track || !prevBtn || !nextBtn) return;
 
-    var items = Array.prototype.slice.call(track.children);
-    var index = 0;
-    var AUTOPLAY_MS = 2800;
-    var timer = null;
+      var items = Array.prototype.slice.call(track.children);
+      if (!items.length) return;
+      var index = 0;
 
-    // Modern evergreen browsers all use the "negative" RTL scrollLeft
-    // convention (0 = start, negative = scrolled further into the content),
-    // so this sign flips the direction of travel to match reading order.
-    var dirSign = getComputedStyle(track).direction === "rtl" ? -1 : 1;
-    var stepPx = items.length > 1
-      ? Math.abs(items[1].getBoundingClientRect().left - items[0].getBoundingClientRect().left)
-      : (items[0] ? items[0].getBoundingClientRect().width : 0);
+      // Modern evergreen browsers all use the "negative" RTL scrollLeft
+      // convention (0 = start, negative = scrolled further into the
+      // content), so this sign flips the direction of travel to match
+      // reading order.
+      var dirSign = getComputedStyle(track).direction === "rtl" ? -1 : 1;
+      var stepPx = items.length > 1
+        ? Math.abs(items[1].getBoundingClientRect().left - items[0].getBoundingClientRect().left)
+        : items[0].getBoundingClientRect().width;
 
-    function go(dir) {
-      index = (index + dir + items.length) % items.length;
-      var behavior = reduceMotion ? "auto" : "smooth";
-      // Scroll the track itself instead of items[index].scrollIntoView():
-      // scrollIntoView walks the whole ancestor chain, including the
-      // document — if the carousel wasn't already fully in the vertical
-      // viewport (e.g. the user is mid-scroll past this section) it would
-      // drag the entire page down to bring the item into view on every
-      // autoplay tick. scrollBy()/scrollTo() on the track never touches
-      // window scroll at all.
-      if (dir > 0 && index === 0) {
-        track.scrollTo({ left: 0, behavior: behavior }); // wrapped past the last item — back to start
-      } else if (dir < 0 && index === items.length - 1) {
-        track.scrollTo({ left: dirSign * track.scrollWidth, behavior: behavior }); // wrapped before the first — jump to the end (browser clamps)
-      } else {
-        // A fixed one-item step rather than "scroll exact distance to
-        // center the target item" — the latter can compute a near-zero
-        // delta by coincidence (e.g. the 2nd item already sits close to
-        // center on initial load), which then gets clamped to a no-op at
-        // the scrollLeft boundary and stalls the very first autoplay tick.
-        // scroll-snap-align:center on each item self-corrects any drift.
-        track.scrollBy({ left: dirSign * dir * stepPx, behavior: behavior });
+      function go(dir) {
+        index = (index + dir + items.length) % items.length;
+        var behavior = reduceMotion ? "auto" : "smooth";
+        // Scroll the track itself instead of items[index].scrollIntoView():
+        // scrollIntoView walks the whole ancestor chain, including the
+        // document, and would drag the entire page down to bring the item
+        // into view if the carousel wasn't already fully in the vertical
+        // viewport. scrollBy()/scrollTo() on the track never touches
+        // window scroll at all.
+        if (dir > 0 && index === 0) {
+          track.scrollTo({ left: 0, behavior: behavior }); // wrapped past the last item — back to start
+        } else if (dir < 0 && index === items.length - 1) {
+          track.scrollTo({ left: dirSign * track.scrollWidth, behavior: behavior }); // wrapped before the first — jump to the end (browser clamps)
+        } else {
+          // A fixed one-item step rather than "scroll exact distance to
+          // center the target item" — the latter can compute a near-zero
+          // delta by coincidence, which then gets clamped to a no-op at
+          // the scrollLeft boundary. scroll-snap-align:center self-corrects
+          // any drift from using a fixed step.
+          track.scrollBy({ left: dirSign * dir * stepPx, behavior: behavior });
+        }
       }
-    }
 
-    function stop() {
-      if (timer) { window.clearInterval(timer); timer = null; }
-    }
-    function start() {
-      if (reduceMotion || timer) return;
-      timer = window.setInterval(function () { go(1); }, AUTOPLAY_MS);
-    }
-
-    prevBtn.addEventListener("click", function () { stop(); go(-1); start(); });
-    nextBtn.addEventListener("click", function () { stop(); go(1); start(); });
-
-    // Pause on user interaction so autoplay doesn't fight a manual swipe/drag.
-    ["mouseenter", "touchstart", "focusin"].forEach(function (evt) {
-      carousel.addEventListener(evt, stop, { passive: true });
+      prevBtn.addEventListener("click", function () { go(-1); });
+      nextBtn.addEventListener("click", function () { go(1); });
     });
-    ["mouseleave", "touchend", "focusout"].forEach(function (evt) {
-      carousel.addEventListener(evt, start, { passive: true });
-    });
-    document.addEventListener("visibilitychange", function () {
-      if (document.hidden) stop(); else start();
-    });
-
-    // Only run while the carousel is actually on screen.
-    if ("IntersectionObserver" in window) {
-      new IntersectionObserver(function (entries) {
-        entries.forEach(function (entry) {
-          if (entry.isIntersecting) start(); else stop();
-        });
-      }, { threshold: 0.2 }).observe(carousel);
-    } else {
-      start();
-    }
   }
 
   // ------------------------------------------------------------------
@@ -396,7 +368,7 @@
     initLeadForms();
     initContactLinks();
     initFooterYear();
-    initCarousel();
+    initCarousels();
     initUserWayPosition();
   });
 })();

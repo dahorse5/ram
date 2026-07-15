@@ -1,31 +1,34 @@
 /* ==========================================================================
    (R)EVOLUTION — Ram · Landing Page
-   Design system: dark ink base (60), bold accent-wash sections (30), electric
-   magenta brand accent (10) — 60-30-10 rule. See color-systems skill.
+   Design system: near-black base (60), bold accent-wash sections (30), red
+   brand accent (10) — 60-30-10 rule. See color-systems skill.
+   Body/secondary text is kept solid white throughout (never dimmed to gray)
+   for contrast against the black+red palette — explicit client requirement.
    ========================================================================== */
 
 :root {
-  /* --- Brand palette (sampled from Ram's real logo files) --- */
-  --accent: #9c2f92;
-  --accent-bright: #c93fbd;
-  --accent-dark: #711f6a;
-  --accent-ink: #fdf4fc;
+  /* --- Brand palette: black + red, matching the red/white transformation
+     banners already used in Ram's own result-card graphics --- */
+  --accent: #d81f35;
+  --accent-bright: #ff3b4e;
+  --accent-dark: #8c1220;
+  --accent-ink: #fff5f5;
 
-  /* --- Ink / neutral scale (warm-tinted dark, not pure black) --- */
-  --ink-950: #0d0b11;
-  --ink-900: #151016;
-  --ink-800: #1e1820;
-  --ink-700: #2c2530;
-  --ink-500: rgba(255,255,255,0.78);
+  /* --- Ink / neutral scale (true near-black, not warm-tinted) --- */
+  --ink-950: #0a0a0a;
+  --ink-900: #121212;
+  --ink-800: #1c1c1c;
+  --ink-700: #2b2b2b;
+  --ink-500: rgba(255,255,255,0.9);
   --ink-300: #ffffff;
-  --ink-100: #ece7ef;
+  --ink-100: #f5f0f0;
 
   --border-dark: rgba(255,255,255,0.09);
   --border-light: rgba(20,10,20,0.09);
 
   --shadow-sm: 0 1px 3px rgba(0,0,0,0.35);
   --shadow-md: 0 10px 30px rgba(0,0,0,0.35);
-  --shadow-glow: 0 8px 30px rgba(156,47,146,0.35);
+  --shadow-glow: 0 8px 30px rgba(216,31,53,0.35);
 
   --radius-sm: 10px;
   --radius-md: 16px;
@@ -125,8 +128,8 @@ p { max-width: 65ch; }
 }
 .btn-accent:hover { background: var(--accent-bright); transform: translateY(-2px); animation: none; }
 @keyframes btn-accent-pulse {
-  0%, 100% { box-shadow: 0 8px 30px rgba(156,47,146,0.35); }
-  50% { box-shadow: 0 8px 34px rgba(156,47,146,0.6); }
+  0%, 100% { box-shadow: 0 8px 30px rgba(216,31,53,0.35); }
+  50% { box-shadow: 0 8px 34px rgba(216,31,53,0.6); }
 }
 .btn-ghost {
   background: transparent;
@@ -142,7 +145,7 @@ p { max-width: 65ch; }
 /* ---------------------------------- Header ---------------------------------- */
 .site-header {
   position: sticky; top: 0; z-index: 500;
-  background: rgba(13,11,17,0.85);
+  background: rgba(10,10,10,0.85);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--border-dark);
 }
@@ -162,7 +165,7 @@ p { max-width: 65ch; }
   position: relative;
   padding-block: var(--space-7) var(--space-6);
   background:
-    radial-gradient(60% 50% at 15% 10%, rgba(156,47,146,0.20), transparent 60%),
+    radial-gradient(60% 50% at 15% 10%, rgba(216,31,53,0.20), transparent 60%),
     var(--ink-950);
   overflow: hidden;
 }
@@ -178,8 +181,8 @@ p { max-width: 65ch; }
   font-weight: 700;
   letter-spacing: 0.01em;
   color: var(--accent-bright);
-  background: rgba(201,63,189,0.12);
-  border: 1px solid rgba(201,63,189,0.35);
+  background: rgba(255,59,78,0.12);
+  border: 1px solid rgba(255,59,78,0.35);
   border-radius: var(--radius-pill);
   padding: 8px 16px;
   margin-bottom: var(--space-3);
@@ -206,7 +209,7 @@ p { max-width: 65ch; }
 }
 .hero-media::after {
   content: ""; position: absolute; inset: 0;
-  background: linear-gradient(to top, rgba(13,11,17,0.55), transparent 45%);
+  background: linear-gradient(to top, rgba(10,10,10,0.55), transparent 45%);
 }
 .hero-media img {
   width: 100%; height: 100%; object-fit: cover; object-position: top center;
@@ -235,8 +238,8 @@ p { max-width: 65ch; }
   animation: lead-form-pulse 3s ease-in-out infinite;
 }
 @keyframes lead-form-pulse {
-  0%, 100% { box-shadow: 0 8px 30px rgba(156,47,146,0.3); }
-  50% { box-shadow: 0 12px 42px rgba(156,47,146,0.55); }
+  0%, 100% { box-shadow: 0 8px 30px rgba(216,31,53,0.3); }
+  50% { box-shadow: 0 12px 42px rgba(216,31,53,0.55); }
 }
 .lead-form--compact { max-width: 720px; padding: var(--space-4); }
 .lead-form-head { text-align: center; margin-bottom: var(--space-3); }
@@ -277,7 +280,7 @@ p { max-width: 65ch; }
   transition: box-shadow .2s var(--ease);
 }
 .field input::placeholder { color: #8b8790; }
-.field input:focus { box-shadow: 0 0 0 3px rgba(201,63,189,0.45); outline: none; }
+.field input:focus { box-shadow: 0 0 0 3px rgba(255,59,78,0.45); outline: none; }
 .field input.is-invalid { box-shadow: 0 0 0 3px rgba(229,86,107,0.55); }
 .field-error { font-size: 12px; color: #ff8296; min-height: 14px; text-align: center; }
 
@@ -300,7 +303,7 @@ p { max-width: 65ch; }
   color: var(--ink-500);
 }
 .form-honesty mark {
-  background: rgba(201,63,189,0.22);
+  background: rgba(255,59,78,0.22);
   color: var(--accent-bright);
   font-weight: 700;
   padding: 1px 6px;
@@ -395,6 +398,11 @@ p { max-width: 65ch; }
   pointer-events: none;
 }
 .pain-wrap { max-width: 760px; margin-inline: auto; position: relative; }
+.pain-lead {
+  font-size: clamp(17px, 2vw, 19px); font-weight: 700; color: var(--ink-100);
+  margin-bottom: var(--space-4); padding-bottom: var(--space-4);
+  border-bottom: 1px solid var(--border-dark);
+}
 .pain-text { font-size: clamp(18px, 2.2vw, 21px); color: var(--ink-300); }
 .mini-cta {
   margin-top: var(--space-5);
@@ -435,7 +443,7 @@ p { max-width: 65ch; }
 }
 .steps-snake-arrowhead {
   fill: var(--accent-bright);
-  filter: drop-shadow(0 0 5px rgba(201,63,189,0.85));
+  filter: drop-shadow(0 0 5px rgba(255,59,78,0.85));
 }
 .steps { position: relative; z-index: 2; }
 .step {
@@ -464,17 +472,43 @@ p { max-width: 65ch; }
 .testimonials { padding-block: var(--space-7); text-align: center; }
 .testimonials h2 { max-width: 28ch; margin-inline: auto; }
 .testimonials-sub { color: var(--ink-300); margin-inline: auto; margin-bottom: var(--space-3); }
-.screenshot-grid {
-  display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-3); text-align: start;
-}
 .screenshot-item, .ba-item {
   border-radius: var(--radius-md); overflow: hidden; border: 1px solid var(--border-dark);
   cursor: zoom-in; position: relative;
   transition: transform .2s var(--ease);
 }
 .screenshot-item:hover, .ba-item:hover { transform: translateY(-4px); }
+/* WhatsApp screenshots come in whatever aspect ratio the phone captured —
+   contain (not cover) on a solid card background so nothing is ever
+   cropped out of the readable text. */
+.screenshot-item { aspect-ratio: 9/16; background: var(--ink-800); }
+.screenshot-item img { width: 100%; height: 100%; object-fit: contain; }
+/* The new before/after cards are all uniform 9:16, so cover-fit here loses
+   nothing — every card is already that exact ratio. */
+.ba-item { aspect-ratio: 9/16; }
+.ba-item img { width: 100%; height: 100%; object-fit: cover; }
+/* The coach's own transformation card — featured first, with a border and
+   caption badge to set it apart from the client results around it. */
+.ba-item--ram { border: 2px solid var(--accent-bright); }
+.ba-item-badge {
+  position: absolute; inset-inline: 0; bottom: 0;
+  background: linear-gradient(0deg, rgba(0,0,0,0.9) 30%, transparent);
+  color: #fff; font-weight: 800; font-size: 14px; line-height: 1.4;
+  text-align: center; padding: 40px 8px 12px;
+  white-space: normal; word-break: break-word; box-sizing: border-box;
+}
 
-/* ---------------------------------- Carousel (before/after) ---------------------------------- */
+/* ---------------------------------- Before / after ----------------------------------
+   Was missing padding-block entirely — harmless while this section sat deep
+   in the page, but it now sits right under the sticky header, so its
+   heading needs the same top clearance every other section gets. */
+.before-after { padding-block: var(--space-7); text-align: center; }
+.before-after h2 { max-width: 34ch; margin-inline: auto; }
+
+/* ---------------------------------- Carousel (manual, 3-up) ----------------------------------
+   Used for before/after, video testimonials, and WhatsApp screenshots.
+   Deliberately no autoplay: the visitor advances it themselves, so a clip
+   they were mid-watching never gets skipped out from under them. */
 .carousel { position: relative; display: flex; align-items: center; gap: var(--space-2); }
 .carousel-track {
   display: flex;
@@ -487,12 +521,22 @@ p { max-width: 65ch; }
   padding-block: var(--space-1);
 }
 .carousel-track::-webkit-scrollbar { display: none; }
-.carousel-track .ba-item {
+.carousel-track > * {
+  /* 100% of the track itself, not a vw-based guess against the full
+     viewport — the track is narrower than the viewport because of the
+     two flanking arrow buttons, so sizing against vw made the first
+     card wider than the track's own visible area and clipped its edge
+     (and any overlaid caption text) on load. */
   flex: 0 0 auto;
-  width: min(72vw, 320px);
-  scroll-snap-align: center;
+  width: 100%;
+  scroll-snap-align: start;
 }
-.carousel-track .ba-item img { width: 100%; height: 100%; object-fit: cover; }
+@media (min-width: 560px) {
+  .carousel-track > * { width: calc((100% - var(--space-3)) / 2); }
+}
+@media (min-width: 900px) {
+  .carousel-track > * { width: calc((100% - 2 * var(--space-3)) / 3); }
+}
 .carousel-btn {
   flex-shrink: 0;
   width: 48px; height: 48px;
@@ -509,7 +553,6 @@ p { max-width: 65ch; }
 /* ---------------------------------- Video testimonials ---------------------------------- */
 .video-testimonials { padding-block: var(--space-7); background: var(--ink-900); text-align: center; }
 .video-testimonials h2 { max-width: 20ch; margin-inline: auto; margin-bottom: var(--space-3); }
-.video-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-3); text-align: start; }
 .video-card {
   position: relative;
   z-index: 0; /* establishes its own stacking context so child z-index (e.g. the scrim) can't escape it */
@@ -617,7 +660,7 @@ p { max-width: 65ch; }
 /* ---------------------------------- Final CTA ---------------------------------- */
 .final-cta {
   padding-block: var(--space-7);
-  background: radial-gradient(70% 60% at 50% 0%, rgba(156,47,146,0.22), transparent 60%), var(--ink-950);
+  background: radial-gradient(70% 60% at 50% 0%, rgba(216,31,53,0.22), transparent 60%), var(--ink-950);
   text-align: center;
 }
 .final-cta-head { margin-bottom: var(--space-3); }
@@ -712,16 +755,12 @@ html.js .reveal.is-visible { opacity: 1; transform: translateY(0); }
   .proof-stat-grid { grid-template-columns: 1fr; }
   .proof-stat-media { order: -1; max-width: 340px; margin-inline: auto; }
   .who-grid { grid-template-columns: 1fr; }
-  .video-grid { grid-template-columns: repeat(2, 1fr); }
-  .screenshot-grid { grid-template-columns: repeat(2, 1fr); }
-  .carousel-track .ba-item { width: min(78vw, 280px); }
   .carousel-btn { width: 40px; height: 40px; font-size: 17px; }
   .sticky-cta { display: block; }
   body { padding-bottom: 68px; }
 }
 
 @media (max-width: 560px) {
-  .video-grid { grid-template-columns: repeat(2, 1fr); }
   .hero-actions { flex-direction: column; align-items: stretch; }
   .hero-actions .btn { width: 100%; }
   .header-banner { display: none; }
